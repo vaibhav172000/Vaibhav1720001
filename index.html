@@ -1,21 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 50px;
-            background-color: lightblue;
-        }
-        h1 {
-            color: darkblue;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Professional Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Hello World! 🌍</h1>
-    <p>My first website is now online!</p>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>YOUR NAME</h1>
+                <h2>Your Profession</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Your City, Country</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h3><i class="fas fa-user"></i> ABOUT ME</h3>
+            <p>Brief introduction highlighting your professional background, skills, and career objectives.</p>
+        </section>
+
+        <section class="section">
+            <h3><i class="fas fa-briefcase"></i> EXPERIENCE</h3>
+            <div class="item">
+                <h4>Job Position</h4>
+                <h5>Company Name | 2020 - Present</h5>
+                <ul>
+                    <li>Responsibility or achievement #1</li>
+                    <li>Responsibility or achievement #2</li>
+                    <li>Responsibility or achievement #3</li>
+                </ul>
+            </div>
+            <!-- Add more experiences as needed -->
+        </section>
+
+        <section class="section">
+            <h3><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
+            <div class="item">
+                <h4>Degree Name</h4>
+                <h5>University Name | 2016 - 2020</h5>
+                <p>Details about your degree or achievements.</p>
+            </div>
+        </section>
+
+        <section class="section skills">
+            <h3><i class="fas fa-code"></i> SKILLS</h3>
+            <div class="skills-container">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>Project Management</span>
+                <span>Data Analysis</span>
+                <!-- Add your skills -->
+            </div>
+        </section>
+    </div>
 </body>
 </html>
