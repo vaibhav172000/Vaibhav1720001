@@ -1,10 +1,10 @@
 /* Modern Resume Styles */
 :root {
-    --primary: #3498db;
-    --secondary: #2c3e50;
-    --light: #ecf0f1;
-    --dark: #2c3e50;
-    --accent: #e74c3c;
+    --primary: #3a0ca3;  /* Deep blue */
+    --secondary: #4361ee; /* Lighter blue */
+    --light: #f8f9fa;
+    --dark: #212529;
+    --accent: #f72585;   /* Pink accent */
 }
 
 body {
@@ -18,18 +18,19 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 header {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     padding: 30px 0;
     text-align: center;
     margin-bottom: 30px;
+    border-radius: 8px 8px 0 0;
 }
 
 .header-content {
@@ -40,6 +41,7 @@ header {
 h1 {
     margin: 0;
     font-size: 2.5rem;
+    letter-spacing: 1px;
 }
 
 h2 {
@@ -61,6 +63,11 @@ h2 {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
 }
 
 .section {
@@ -95,6 +102,14 @@ h2 {
     color: #666;
 }
 
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -102,18 +117,24 @@ h2 {
 }
 
 .skills-container span {
-    background: var(--light);
+    background: #e9ecef;
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skills-container span:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
+    .container {
+        margin: 10px;
+        padding: 15px;
     }
     
     h1 {
@@ -122,5 +143,11 @@ h2 {
     
     h2 {
         font-size: 1.2rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
 }
