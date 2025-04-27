@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaibhav Kakde | Fintech Business Analyst</title>
+    <meta name="description" content="Dynamics 365 CRM Migration Expert | ICICI Bank | 10,000+ Users Migrated | 50+ Digital Journeys">
+    
+    <!-- ATS Optimization -->
+    <meta name="keywords" content="Business Analyst, CRM Migration, Dynamics 365, Azure DevOps, Banking Technology, API Integration, Fintech">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --fintech-blue: #0369a1;
+            --fintech-teal: #0d9488;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --dark-bg: #111827;
+            --dark-card: #1f2937;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #0d9488 100%);
+            --glass: rgba(255, 255, 255, 0.15);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] {
+            --text: #f3f4f6;
+            --text-light: #9ca3af;
+            --bg: #111827;
+            --card: #1f2937;
+            --glass: rgba(31, 41, 55, 0.5);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Fintech Background Animation */
+        #fintech-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        /* Banking Data Stream Animation */
+        .data-stream {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 20px,
+                rgba(99, 102, 241, 0.1) 20px,
+                rgba(99, 102, 241, 0.1) 21px
+            );
+            animation: streamFlow 60s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes streamFlow {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 1000px; }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--fintech-blue), var(--fintech-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            border: none;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--fintech-teal);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--fintech-teal);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid var(--fintech-teal);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .card .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 500;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--fintech-teal);
+        }
+
+        /* Metrics Grid */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .metric {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--fintech-teal);
+        }
+
+        .metric:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Banking Tech Animation */
+        .tech-animation {
+            height: 300px;
+            background: var(--card);
+            border-radius: 16px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .transaction-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--fintech-teal);
+            border-radius: 50%;
+            filter: drop-shadow(0 0 8px var(--fintech-teal));
+        }
+
+        .api-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, var(--fintech-blue), transparent);
+        }
+
+        /* Framework Showcase */
+        .frameworks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .framework {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-bottom: 3px solid var(--fintech-teal);
+        }
+
+        .framework:hover {
+            transform: translateY(-5px);
+        }
+
+        .framework-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--fintech-blue);
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .education-card .degree {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .achievement {
+            background: rgba(13, 148, 136, 0.1);
+            color: var(--fintech-teal);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Extracurricular */
+        .extracurricular {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .activity {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .activity:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .activity-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--fintech-blue);
+        }
+
+        .activity-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .tagline {
+                font-size: 1.2rem;
+            }
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fintech Background Animation -->
+    <div id="fintech-animation"></div>
+    <div class="data-stream"></div>
+    
+    <div class="container">
+        <header>
+            <button class="theme-toggle" id="themeToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            
+            <h1>Vaibhav Kakde</h1>
+            <p class="tagline">Fintech Business Analyst | CRM Migration Expert | Digital Transformation Leader</p>
+            
+            <nav>
+                <a href="#about" class="active">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#frameworks">Frameworks</a>
+                <a href="#education">Education</a>
+                <a href="#extracurricular">Leadership</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+        
+        <section id="about">
+            <h2>Professional Profile</h2>
+            <div class="card">
+                <p>Innovative <strong>Business Analyst</strong> specializing in <strong>banking technology transformations</strong> at ICICI Bank. Expert in <strong>Microsoft Dynamics 365 CRM migrations</strong> with proven success in <strong>large-scale digital journey integrations</strong> across financial services ecosystems. Combines technical expertise with strategic vision to drive <strong>20%+ efficiency gains</strong> in enterprise systems.</p>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric floating">
+                    <div class="metric-value">10,000+</div>
+                    <div class="metric-label">Users Migrated</div>
+                </div>
+                <div class="metric floating" style="animation-delay: 0.5s">
+                    <div class="metric-value">50+</div>
+                    <div class="metric-label">Digital Journeys</div>
+                </div>
+                <div class="metric floating" style="animation-delay: 1s">
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">User Stories</div>
+                </div>
+                <div class="metric floating" style="animation-delay: 1.5s">
+                    <div class="metric-value">20%</div>
+                    <div class="metric-label">Manpower Savings</div>
+                </div>
+            </div>
+            
+            <!-- Banking Technology Animation -->
+            <div class="tech-animation" id="bankingAnimation">
+                <!-- Nodes and connections will be added via JavaScript -->
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="card">
+                <h3>ICICI Bank</h3>
+                <span class="date">June 2023 - Present | Mumbai, India</span>
+                <p><strong>Business Analyst / CRM Migration Specialist</strong></p>
+                <ul>
+                    <li>Spearheaded migration of <strong>10,000+ users</strong> to Dynamics 365 CRM with zero business disruption during transition</li>
+                    <li>Migrated <strong>500+ customer journeys</strong> from legacy systems to modern CRM platform</li>
+                    <li>Integrated <strong>50+ digital journeys</strong> and <strong>100+ group company journeys</strong> through cross-CRM API integrations (e.g., ICICI Bank ↔ ICICI Securities)</li>
+                    <li>Tracked and resolved <strong>500+ user stories</strong> with complete requirements traceability</li>
+                    <li>Implemented comprehensive tracking for <strong>bug aging, UAT/prod defects, SRS rework rates</strong>, and migration blockers</li>
+                    <li>Designed real-time dashboards to monitor <strong>SR migration status</strong> and old CRM rollouts</li>
+                    <li>Achieved <strong>20% manpower reduction</strong> through process automation and framework implementations</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="frameworks">
+            <h2>CRM Frameworks Implemented</h2>
+            <p class="card">Built enterprise-grade solutions for ICICI Bank's iCRM platform:</p>
+            
+            <div class="frameworks">
+                <div class="framework">
+                    <div class="framework-icon">🔍</div>
+                    <h3>Case Extract</h3>
+                    <p>Automated data retrieval from legacy systems</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">📝</div>
+                    <h3>Business Process Description</h3>
+                    <p>Standardized 150+ banking workflows</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">👁️</div>
+                    <h3>OCR Framework</h3>
+                    <p>Reduced document processing time by 40%</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">🔄</div>
+                    <h3>Round Robin Assignment</h3>
+                    <p>Optimized workload distribution</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">📤</div>
+                    <h3>Bulk Upload</h3>
+                    <p>Enabled mass data migrations</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">⚠️</div>
+                    <h3>Escalation Matrix</h3>
+                    <p>Reduced resolution time by 35%</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">👤</div>
+                    <h3>User Authentication</h3>
+                    <p>Secure role-based access control</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">🏦</div>
+                    <h3>C360 Accounts</h3>
+                    <p>Unified customer view across products</p>
+                </div>
+                <div class="framework">
+                    <div class="framework-icon">🤝</div>
+                    <h3>Group Company Integration</h3>
+                    <p>Cross-CRM case routing via APIs</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Visvesvaraya National Institute of Technology</h3>
+                    <span class="degree">B.Tech in Metallurgical & Materials Engineering</span>
+                    <span class="date">2019 - 2023 | CGPA: 8.1/10</span>
+                    <span class="achievement">Training & Placement Secretary</span>
+                    <span class="achievement">Chess Club Secretary</span>
+                    <span class="achievement">Tech Fest Manager</span>
+                </div>
+                
+                <div class="education-card">
+                    <h3>HSC (Maharashtra Board)</h3>
+                    <span class="degree">Class 12 - Science Stream</span>
+                    <span class="date">2018 | Score: 89.34%</span>
+                    <span class="achievement">1st Rank in Class</span>
+                </div>
+                
+                <div class="education-card">
+                    <h3>CBSE Board</h3>
+                    <span class="degree">Class 10</span>
+                    <span class="date">2016 | CGPA: 9.8/10</span>
+                    <span class="achievement">Academic Excellence</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="extracurricular">
+            <h2>Leadership & Activities</h2>
+            
+            <div class="extracurricular">
+                <div class="activity">
+                    <div class="activity-icon">👔</div>
+                    <h3 class="activity-title">T&P Secretary</h3>
+                    <p>Managed 60+ campus recruitments at VNIT Nagpur</p>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-icon">♟️</div>
+                    <h3 class="activity-title">Chess Club Secretary</h3>
+                    <p>Organized inter-collegiate tournaments</p>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-icon">🖥️</div>
+                    <h3 class="activity-title">Tech Fest Manager</h3>
+                    <p>Led AXIS technical festival with 1000+ participants</p>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-icon">🎤</div>
+                    <h3 class="activity-title">Open Mic Organizer</h3>
+                    <p>Hosted cultural events showcasing student talent</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            
+            <div class="card">
+                <p>Let's connect to discuss fintech innovations, CRM transformations, or potential collaborations:</p>
+                
+                <div style="margin-top: 1.5rem;">
+                    <p><strong>Email:</strong> <a href="mailto:vaibhavkakde17@gmail.com">vaibhavkakde17@gmail.com</a></p>
+                    <p><strong>Phone:</strong> +91 9425818928</p>
+                    <p><strong>LinkedIn:</strong> <a href=https://www.linkedin.com/in/vaibhav-kakde-6a681b1b4" target="_blank">https://www.linkedin.com/in/vaibhav-kakde-6a681b1b4</a></p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2023 Vaibhav Kakde. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">Built with cutting-edge fintech technologies</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        // Navigation Active State
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Banking Technology Animation
+        const bankingAnimation = document.getElementById('bankingAnimation');
+        const animWidth = bankingAnimation.offsetWidth;
+        const animHeight = bankingAnimation.offsetHeight;
+        
+        // Create transaction nodes
+        for (let i = 0; i < 15; i++) {
+            const node = document.createElement('div');
+            node.classList.add('transaction-node');
+            node.style.left = `${Math.random() * animWidth}px`;
+            node.style.top = `${Math.random() * animHeight}px`;
+            bankingAnimation.appendChild(node);
+            
+            // Animate nodes
+            gsap.to(node, {
+                x: `${(Math.random() - 0.5) * 100}`,
+                y: `${(Math.random() - 0.5) * 100}`,
+                duration: 5 + Math.random() * 10,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        }
+        
+        // Create API connections
+        for (let i = 0; i < 8; i++) {
+            const connection = document.createElement('div');
+            connection.classList.add('api-connection');
+            connection.style.width = `${100 + Math.random() * 200}px`;
+            connection.style.left = `${Math.random() * animWidth}px`;
+            connection.style.top = `${Math.random() * animHeight}px`;
+            connection.style.transform = `rotate(${Math.random() * 360}deg)`;
+            bankingAnimation.appendChild(connection);
+            
+            // Animate glow
+            gsap.to(connection, {
+                opacity: 0.7,
+                duration: 2 + Math.random() * 3,
+                repeat: -1,
+                yoyo: true
+            });
+        }
+        
+        // Fintech 3D Animation
+        const fintechCanvas = document.getElementById('fintech-animation');
+        const renderer = new THREE.WebGLRenderer({ 
+            antialias: true,
+            alpha: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        fintechCanvas.appendChild(renderer.domElement);
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+        
+        // Create fintech particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 500;
+        
+        const posArray = new Float32Array(particlesCount * 3);
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 10;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x0369a1,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        // Create connections between particles
+        const lineMaterial = new THREE.LineBasicMaterial({ 
+            color: 0x0d9488,
+            transparent: true,
+            opacity: 0.3
+        });
+        
+        for(let i = 0; i < particlesCount; i++) {
+            if(i % 10 === 0) {
+                const positions = particlesGeometry.attributes.position.array;
+                const x1 = positions[i * 3];
+                const y1 = positions[i * 3 + 1];
+                const z1 = positions[i * 3 + 2];
+                
+                for(let j = 0; j < 3; j++) {
+                    const randomIndex = Math.floor(Math.random() * particlesCount);
+                    const x2 = positions[randomIndex * 3];
+                    const y2 = positions[randomIndex * 3 + 1];
+                    const z2 = positions[randomIndex * 3 + 2];
+                    
+                    const lineGeometry = new THREE.BufferGeometry();
+                    const linePositions = new Float32Array(6);
+                    linePositions[0] = x1;
+                    linePositions[1] = y1;
+                    linePositions[2] = z1;
+                    linePositions[3] = x2;
+                    linePositions[4] = y2;
+                    linePositions[5] = z2;
+                    
+                    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+                    const line = new THREE.Line(lineGeometry, lineMaterial);
+                    scene.add(line);
+                }
+            }
+        }
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            particlesMesh.rotation.x += 0.0005;
+            particlesMesh.rotation.y += 0.001;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // Initialize Particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#0369a1"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#0d9488",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.5
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
